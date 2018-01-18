@@ -50,6 +50,11 @@ import free.rm.skytube.gui.fragments.MainFragment;
 import free.rm.skytube.gui.fragments.PlaylistVideosFragment;
 import free.rm.skytube.gui.fragments.SearchVideoGridFragment;
 
+//add for visual studio app center test
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
+
 /**
  * Main activity (launcher).  This activity holds {@link free.rm.skytube.gui.fragments.VideosGridFragment}.
  */
@@ -120,6 +125,8 @@ public class MainActivity extends AppCompatActivity implements MainActivityListe
 					getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, mainFragment).commit();
 				}
 			}
+			//add for visual studio app center test
+			AppCenter.start(getApplication(), "f0768252-713d-4075-b7fe-043a46f6ba8a", Analytics.class, Crashes.class);
 		}
 	}
 
